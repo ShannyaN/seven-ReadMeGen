@@ -3,7 +3,7 @@ const fs = require('fs');
 
 //Constants in the Files
 const tableOfContents = 
-"\n\n # Table of Contents \n \n[1. Description](#Description) \n[2. Installation] (#Installation)\n[3. Usage](Usage) \n[4. License](#License) \n[5. Contributing](#Contributing)\n[6. Tests](#Tests) \n[7. Questions](#Questions)\n"
+"\n\n # Table of Contents \n \n[1. Description](#Description) \n[2. Installation] (#Installation)\n[3. Usage](#Usage) \n[4. License](#License) \n[5. Contributing](#Contributing)\n[6. Tests](#Tests) \n[7. Questions](#Questions)\n"
 const preFaces = ["\n# Description\n","\n\n# Installation\n","\n\n# Usage\n","\n\n# License\n","\n\n# Contributions\n","\n\n# Tests\n","\n\n# Questions\n" ]
 
 const messages = ["description done.", "installation done.","usage done.","contributions done.","tests done.","questions done."]
@@ -69,7 +69,6 @@ function fileWrite(response){
     fs.appendFile('README.md',tableOfContents, (err)=>err ? console.error(err): console.log('Table of Contents done.'))
     for (let i=0;i<preFaces.length;i++){
         fs.appendFile('README.md',preFaces[i] + names[i], (err)=>err ? console.error(err): console.log(messages[i]))
-        
     }
 }
 //setTimeout
