@@ -1,6 +1,19 @@
-## ------
+##
+======
 
- #Table of Contents 
+# Usage
+
+
+# License
+
+
+# Contributions
+
+
+# Tests
+
+
+ # Table of Contents 
  
 1. Description 
 2. Installation 
@@ -10,22 +23,10 @@
 6. Tests 
 7. Questions
 
-
-#License
-
-
-#Tests
+# Description
 
 
-#Contributions
-
-
-#Questions
+# Questions
 undefined
 
-#Installation
-
-
-#Usage
-
-#Description
+# Installation
