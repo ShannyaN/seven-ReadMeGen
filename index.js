@@ -3,8 +3,8 @@ const fs = require('fs');
 
 //Constants in the Files
 const tableOfContents = 
-"\n\n #Table of Contents\n1. Description\n2. Installation\n3. Usage\n4. License\n5. Contributing\n6. Tests\n7. Questions\n"
-const preFaces = ["#\nDescription\n","\n#Installation\n","\n#Usage\n","\n#License\n","\n#Contributions\n","\n#Tests\n","\n#Questions\n" ]
+"\n\n #Table of Contents \n \n1. Description \n2. Installation \n3. Usage \n4. License \n5. Contributing \n6. Tests \n7. Questions\n"
+const preFaces = ["\n#Description\n","\n\n#Installation\n","\n\n#Usage\n","\n\n#License\n","\n\n#Contributions\n","\n\n#Tests\n","\n\n#Questions\n" ]
 
 const messages = ["description done.", "installation done.","usage done.","contributions done.","tests done.","questions done."]
 inquirer
@@ -48,20 +48,13 @@ inquirer
     .then ((response)=> {
         console.log(response);
         fileWrite(response)
-        //const markdown = genMarkdown(response)
-    })
+})
     
-    
-//fs.writeFile('README.md',response, (err) =>
-//err ? console.error(err) : console.log('Response logged!'));
-    //    fs.writeFile(README.md, ${response}, (err) =>
-     //   err ? console.error(err) : console.log('Response logged!'));
-    //)
-//THEN a high-quality, professional README.md is generated with the title of my project and sections entitled Description, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions
+
 
 function fileWrite(response){
     const names = [response.description, response.installation, response.usage, response.contributions, response.tests, response.questions]
-    fs.writeFile('README.md', "##" +(response.fileTitle),(err) =>
+    fs.writeFile('README.md', "##" +(response.fileTitle) + "------",(err) =>
     err ? console.error(err) : console.log('Title in'))
     fs.appendFile('README.md',tableOfContents, (err)=>err ? console.error(err): console.log('Table of Contents done.'))
     for (let i=0;i<preFaces.length;i++){
