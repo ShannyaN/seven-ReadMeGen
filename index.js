@@ -1,6 +1,10 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
+//Constants in the Files
+const tableOfContents = 
+"\n\n #Table of Contents\n1. Description\n2. Installation\n3. Usage\n4. Licence\n5. Contributing\n6. Tests\n7. Questions\n"
+
 inquirer
     .prompt ([
         {
@@ -8,7 +12,7 @@ inquirer
             message: "File title: ",
             name: "fileTitle"
         },
-        {
+       /* {
             type:"input",
             message: "What is the description of this repo ",
             name: "description"
@@ -37,10 +41,11 @@ inquirer
             type:"input",
             message: "Any questions? ",
             name: "questions"
-        }
+        }*/
     ])
     .then ((response)=> {
         console.log(response);
+        fileWrite(response)
         //const markdown = genMarkdown(response)
     })
     
@@ -51,3 +56,9 @@ inquirer
      //   err ? console.error(err) : console.log('Response logged!'));
     //)
 //THEN a high-quality, professional README.md is generated with the title of my project and sections entitled Description, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions
+
+function fileWrite(response){
+    fs.writeFile('README.md', "##" +(response.fileTitle),(err) =>
+    err ? console.error(err) : console.log('Title in'))
+    fs.appendFile('README.md',tableOfContents, (err)=>err ? console.error(err): console.log('Table of Contents in'))
+}
