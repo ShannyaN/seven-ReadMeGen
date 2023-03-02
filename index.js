@@ -60,11 +60,11 @@ inquirer
 //THEN a high-quality, professional README.md is generated with the title of my project and sections entitled Description, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions
 
 function fileWrite(response){
+    const names = [response.description, response.installation, response.usage, response.contributions, response.tests, response.questions]
     fs.writeFile('README.md', "##" +(response.fileTitle),(err) =>
     err ? console.error(err) : console.log('Title in'))
     fs.appendFile('README.md',tableOfContents, (err)=>err ? console.error(err): console.log('Table of Contents done.'))
     for (let i=0;i<preFaces.length;i++){
-        fs.appendFile('README.md',preFaces[i] + response.names[i], (err)=>err ? console.error(err): console.log(messages[i]))
+        fs.appendFile('README.md',preFaces[i] + names[i], (err)=>err ? console.error(err): console.log(messages[i]))
     }
 }
-const names = [description, installation, usage, contributions, tests, questions]
