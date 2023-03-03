@@ -9,8 +9,7 @@
 [4. License](##License)  
 [5. Contributing](##Contributing)  
 [6. Tests](##Tests)  
-[7. Questions](##Questions) 
-  
+[7. Questions](##Questions)  
 [8. Screenshots](##Screenshots)  
 [9.Links](##Links)  
 ## Description  
@@ -35,9 +34,9 @@ GNU General Publice License v3.0
 Take a closer look at this repo and my other work by visiting my GitHub with the link below, or contact me directly by email.  
 GitHub: https://github.com/  
 Email:   
-##Screenshot  
-![screenshot1]undefined  
-![screenshot2]undefined 
-##Links  
+## Screenshots  
+![screenshot1]  
+![screenshot2]  
+## Links  
 Deployed site:   
 Repository: 
