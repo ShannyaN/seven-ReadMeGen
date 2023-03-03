@@ -4,9 +4,9 @@ const fs = require('fs');
 
 //Constants in the Files
 const tableOfContents = 
-"  \n  \n # Table of Contents  \n   \n[1. Description](#Description)  \n[2. Installation](#Installation)  \n[3. Usage](#Usage)  \n[4. License](#License)  \n[5. Contributing](#Contributing)  \n[6. Tests](#Tests)  \n[7. Questions](#Questions) \n"
-const preFaces = ["  \n## Description  \n","  \n  \n## Installation  \n","  \n  \n## Usage  \n","  \n  \n## License  \n","  \n  \n## Contributions  \n","   \n   \n## Tests   \n","   \n   \n## Questions  \nTake a closer look at this repo and my other work by visiting my GitHub with the link below, or contact me directly by email.  \nGitHub: https://github.com/" ,"  \nEmail: "]
-const messages = ["description done.", "installation done.","usage done.","license done","contributions done.","tests done.","git added.","email added"]
+"  \n  \n # Table of Contents  \n   \n[1. Description](##Description)  \n[2. Installation](##Installation)  \n[3. Usage](##Usage)  \n[4. License](##License)  \n[5. Contributing](##Contributing)  \n[6. Tests](##Tests)  \n[7. Questions](##Questions) \n  \n[8. Screenshots](##Screenshots)  \n[9.Links](##Links)"
+const preFaces = ["  \n## Description  \n","  \n  \n## Installation  \n","  \n  \n## Usage  \n","  \n  \n## License  \n","  \n  \n## Contributions  \n","   \n   \n## Tests   \n","   \n   \n## Questions  \nTake a closer look at this repo and my other work by visiting my GitHub with the link below, or contact me directly by email.  \nGitHub: https://github.com/" ,"  \nEmail: ","  \n##Screenshot  \n![screenshot]","  \n##Links  \nDeployed site: ","  \nRepository: "]
+const messages = ["description done.", "installation done.","usage done.","license done","contributions done.","tests done.","git added.","email added","screenshots done.","deplyed link done.","repo link done."]
 let badge;
 
 //Function to generate badge
@@ -61,7 +61,7 @@ inquirer
         },
         {
             type:"input",
-            message: "Provide and example of usage. ",
+            message: "Provide an example of usage. ",
             name: "usage"
         },
         {
@@ -89,6 +89,21 @@ inquirer
             type:"input",
             message: "E-mail: ",
             name: "email"
+        },
+        {
+            type:"input",
+            message: "Links/paths to screenshots within paranthesis: ",
+            name: "screenshot"
+        },
+        {
+            type:"input",
+            message: "Deployed site link: ",
+            name: "deployed"
+        },
+        {
+            type:"input",
+            message: "Repo link: ",
+            name: "repo"
         }
        
     ])
@@ -99,7 +114,7 @@ inquirer
 })
 //writing the ReadMe
 function fileWrite(response){
-    const names = [response.description, response.installation, response.usage, response.license,response.contributions, response.tests, response.github,response.email]
+    const names = [response.description, response.installation, response.usage, response.license,response.contributions, response.tests, response.github,response.email, response.screenshots, response.deployed,response.repo]
     fs.writeFileSync('README.md', "# " +(response.fileTitle),(err) =>
     err ? console.error(err) : console.log('Title in'))
     makeBadge(response.license)//badge function to run with license selected from input
