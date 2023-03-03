@@ -5,8 +5,8 @@ const fs = require('fs');
 //Constants in the Files
 const tableOfContents = 
 "  \n  \n # Table of Contents  \n   \n[1. Description](##Description)  \n[2. Installation](##Installation)  \n[3. Usage](##Usage)  \n[4. License](##License)  \n[5. Contributing](##Contributing)  \n[6. Tests](##Tests)  \n[7. Questions](##Questions) \n  \n[8. Screenshots](##Screenshots)  \n[9.Links](##Links)"
-const preFaces = ["  \n## Description  \n","  \n  \n## Installation  \n","  \n  \n## Usage  \n","  \n  \n## License  \n","  \n  \n## Contributions  \n","   \n   \n## Tests   \n","   \n   \n## Questions  \nTake a closer look at this repo and my other work by visiting my GitHub with the link below, or contact me directly by email.  \nGitHub: https://github.com/" ,"  \nEmail: ","  \n##Screenshot  \n![screenshot]","  \n##Links  \nDeployed site: ","  \nRepository: "]
-const messages = ["description done.", "installation done.","usage done.","license done","contributions done.","tests done.","git added.","email added","screenshots done.","deplyed link done.","repo link done."]
+const preFaces = ["  \n## Description  \n","  \n  \n## Installation  \n","  \n  \n## Usage  \n","  \n  \n## License  \n","  \n  \n## Contributions  \n","   \n   \n## Tests   \n","   \n   \n## Questions  \nTake a closer look at this repo and my other work by visiting my GitHub with the link below, or contact me directly by email.  \nGitHub: https://github.com/" ,"  \nEmail: ","  \n##Screenshot  \n![screenshot1]","  \n![screenshot2]"," \n##Links  \nDeployed site: ","  \nRepository: "]
+const messages = ["description done.", "installation done.","usage done.","license done","contributions done.","tests done.","git added.","email added","first screenshot done.","second screenshot done.","deplyed link done.","repo link done."]
 let badge;
 
 //Function to generate badge
@@ -114,13 +114,16 @@ inquirer
 })
 //writing the ReadMe
 function fileWrite(response){
-    const names = [response.description, response.installation, response.usage, response.license,response.contributions, response.tests, response.github,response.email, response.screenshots, response.deployed,response.repo]
+    const names = [response.description, response.installation, response.usage, response.license,response.contributions, response.tests, response.github,response.email, response.screenshot1, response.screenshot2, response.deployed,response.repo]
     fs.writeFileSync('README.md', "# " +(response.fileTitle),(err) =>
     err ? console.error(err) : console.log('Title in'))
     makeBadge(response.license)//badge function to run with license selected from input
-    fs.appendFileSync('README.md', badge, (err)=>err ? console.error(err): console.log('Badge added'))
+    fs.appendFileSync('README.md',"  \n"+ badge, (err)=>err ? console.error(err): console.log('Badge added'))
     fs.appendFileSync('README.md', tableOfContents, (err)=>err ? console.error(err): console.log('Table of Contents done.'));
     for (let i=0;i<preFaces.length;i++){
         fs.appendFileSync('README.md',preFaces[i] + names[i], (err)=>err ? console.error(err): console.log(messages[i]))
         }
+    //console.log(preFaces[8])
+    //console.log(names[8])
+   // fs.appendFileSync('README.md', preFaces[6]+names[6], (err)=>err ? console.error(err): console.log('Table of Contents done.'));
     } 
