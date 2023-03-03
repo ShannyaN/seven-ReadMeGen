@@ -4,12 +4,11 @@ const fs = require('fs');
 
 //Constants in the Files
 const tableOfContents = 
-"\n\n # Table of Contents \n \n[1. Description](#Description) \n[2. Installation](#Installation)\n[3. Usage](#Usage) \n[4. License](#License) \n[5. Contributing](#Contributing)\n[6. Tests](#Tests) \n[7. Questions](#Questions)\n"
-
-const preFaces = ["\n## Description\n","\n\n## Installation\n","\n\n## Usage\n","\n\n## License\n","\n\n## Contributions\n","\n\n## Tests\n","\n\n## Questions\n" ]
-
+"  \n  \n # Table of Contents  \n   \n[1. Description](#Description)  \n[2. Installation](#Installation)  \n[3. Usage](#Usage)  \n[4. License](#License)  \n[5. Contributing](#Contributing) \n[6. Tests](#Tests)  \n[7. Questions](#Questions) \n"
+const preFaces = ["  \n## Description  \n","  \n  \n## Installation  \n","  \n  \n## Usage  \n","  \n  \n## License  \n","  \n  \n## Contributions  \n","  \n  \n## Tests  \n","  \n  \n## Questions  \n" ]
 const messages = ["description done.", "installation done.","usage done.","license done","contributions done.","tests done.","questions done."]
 let badge;
+
 //Function to generate badge
 function makeBadge(title) {
     if (title== "GNU General Publice License v3.0"){
@@ -18,10 +17,10 @@ function makeBadge(title) {
     } else if (title=="MIT License"){
         badge = "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)"
         return badge;
-    } else if (title=="'BSD 2-Clause'"){
+    } else if (title=="BSD 2-Clause"){
         badge = "[![License](https://img.shields.io/badge/License-BSD_2--Clause-orange.svg)](https://opensource.org/licenses/BSD-2-Clause)"
         return badge;
-    } else if (title=="'BSD 3-Clause'"){
+    } else if (title=="BSD 3-Clause"){
         badge = "[![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)"
         return badge;
     }else if (title=="Boost Software License 1.0"){
@@ -41,7 +40,8 @@ function makeBadge(title) {
         return badge;
     }else {return}
 }
-'Boost Software License 1.0','Creative Commons Zero v1.0 Universal', 'Eclipse Public License 2.0','Mozilla Public License','The Unlicense'
+
+//function for inputs
 inquirer
     .prompt ([
         {
@@ -97,16 +97,17 @@ inquirer
         }
        
     ])
+    //with data input-do the following
     .then ((response)=> {
         console.log(response);
         fileWrite(response)
 })
-
+//writing the ReadMe
 function fileWrite(response){
     const names = [response.description, response.installation, response.usage, response.license,response.contributions, response.tests, response.questions]
     fs.writeFileSync('README.md', "# " +(response.fileTitle),(err) =>
     err ? console.error(err) : console.log('Title in'))
-    makeBadge(response.license)
+    makeBadge(response.license)//badge function to run with license selected from input
     fs.appendFileSync('README.md', badge, (err)=>err ? console.error(err): console.log('Badge added'))
     fs.appendFileSync('README.md', tableOfContents, (err)=>err ? console.error(err): console.log('Table of Contents done.'));
     for (let i=0;i<preFaces.length;i++){
