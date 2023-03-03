@@ -4,7 +4,7 @@ const fs = require('fs');
 
 //Constants in the Files
 const tableOfContents = 
-"  \n  \n # Table of Contents  \n   \n[1. Description](##Description)  \n[2. Installation](##Installation)  \n[3. Usage](##Usage)  \n[4. License](##License)  \n[5. Contributing](##Contributing)  \n[6. Tests](##Tests)  \n[7. Questions](##Questions)  \n[8. Screenshots](##Screenshots)  \n[9.Links](##Links)"
+"  \n  \n # Table of Contents  \n   \n1. [Description](#description)  \n2. [Installation](#installation)  \n3. [Usage](#usage)  \n4. [License](#license)  \n5. [Contributions](#contributions)  \n6. [Tests](#tests)  \n7. [Questions](#questions)  \n8. [Screenshots](#screenshots)  \n9.[Links](#links)"
 const preFaces = ["  \n## Description  \n","  \n  \n## Installation  \n","  \n  \n## Usage  \n","  \n  \n## License  \n","  \n  \n## Contributions  \n","   \n   \n## Tests   \n","   \n   \n## Questions  \nTake a closer look at this repo and my other work by visiting my GitHub with the link below, or contact me directly by email.  \nGitHub: https://github.com/" ,"  \nEmail: ","  \n## Screenshots  \n![screenshot1]","  \n![screenshot2]","  \n## Links  \nDeployed site: ","  \nRepository: "]
 const messages = ["description done.", "installation done.","usage done.","license done","contributions done.","tests done.","git added.","email added","first screenshot done.","second screenshot done.","deplyed link done.","repo link done."]
 let badge;

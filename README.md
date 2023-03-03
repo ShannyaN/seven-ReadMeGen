@@ -1,42 +1,42 @@
-# README File Generator  
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)  
+#   
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)  
   
  # Table of Contents  
    
-[1. Description](##Description)  
-[2. Installation](##Installation)  
-[3. Usage](##Usage)  
-[4. License](##License)  
-[5. Contributing](##Contributing)  
-[6. Tests](##Tests)  
-[7. Questions](##Questions)  
-[8. Screenshots](##Screenshots)  
-[9.Links](##Links)  
+1. [Description](#description)  
+2. [Installation](#installation)  
+3. [Usage](#usage)  
+4. [License](#license)  
+5. [Contributions](#contributions)  
+6. [Tests](#tests)  
+7. [Questions](#questions)  
+8. [Screenshots](#screenshots)  
+9.[Links](#links)  
 ## Description  
-This script is capable of creating a ReadMe file with simple inputs from the user that are then imported into a professional README file templlate.  
+  
   
 ## Installation  
-Node: Version 16 or later, Inquirer(npm): Version 8.2.4, File Storage library that gets   
+  
   
 ## Usage  
-When creating a file or repo to be published to the public, ReadMe files are an important form of communication between the creator of the file and the user accessing it.    
+  
   
 ## License  
-MIT License  
+GNU General Publice License v3.0  
   
 ## Contributions  
-Yes. Open to contributors who could made the media input more modifiable and without limit of amount.   
+   
    
 ## Tests   
-Try running in node using Visual Studio.   
+   
    
 ## Questions  
 Take a closer look at this repo and my other work by visiting my GitHub with the link below, or contact me directly by email.  
-GitHub: https://github.com/ShannyaN   
-Email: niveyro101@gmail.com  
+GitHub: https://github.com/  
+Email:   
 ## Screenshots  
-![screenshot1](images/templateTop.png)  
-![screenshot2](images/templateBottom.png)  
+![screenshot1]  
+![screenshot2]  
 ## Links  
-Deployed site: N/A  
-Repository:  https://github.com/ShannyaN/seven-ReadMeGen
+Deployed site:   
+Repository: 
