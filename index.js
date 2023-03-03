@@ -4,7 +4,7 @@ const fs = require('fs');
 
 //Constants in the Files
 const tableOfContents = 
-"  \n  \n # Table of Contents  \n   \n1. [Description](#description)  \n2. [Installation](#installation)  \n3. [Usage](#usage)  \n4. [License](#license)  \n5. [Contributions](#contributions)  \n6. [Tests](#tests)  \n7. [Questions](#questions)  \n8. [Screenshots](#screenshots)  \n9.[Links](#links)"
+"  \n  \n # Table of Contents  \n   \n1. [Description](#description)  \n2. [Installation](#installation)  \n3. [Usage](#usage)  \n4. [License](#license)  \n5. [Contributions](#contributions)  \n6. [Tests](#tests)  \n7. [Questions](#questions)  \n8. [Screenshots](#screenshots)  \n9. [Links](#links)"
 const preFaces = ["  \n## Description  \n","  \n  \n## Installation  \n","  \n  \n## Usage  \n","  \n  \n## License  \n","  \n  \n## Contributions  \n","   \n   \n## Tests   \n","   \n   \n## Questions  \nTake a closer look at this repo and my other work by visiting my GitHub with the link below, or contact me directly by email.  \nGitHub: https://github.com/" ,"  \nEmail: ","  \n## Screenshots  \n![screenshot1]","  \n![screenshot2]","  \n## Links  \nDeployed site: ","  \nRepository: "]
 const messages = ["description done.", "installation done.","usage done.","license done","contributions done.","tests done.","git added.","email added","first screenshot done.","second screenshot done.","deplyed link done.","repo link done."]
 let badge;
@@ -128,7 +128,4 @@ function fileWrite(response){
     for (let i=0;i<preFaces.length;i++){
         fs.appendFileSync('README.md',preFaces[i] + names[i], (err)=>err ? console.error(err): console.log(messages[i]))
         }
-    //console.log(preFaces[8])
-    //console.log(names[8])
-   // fs.appendFileSync('README.md', preFaces[6]+names[6], (err)=>err ? console.error(err): console.log('Table of Contents done.'));
     } 
