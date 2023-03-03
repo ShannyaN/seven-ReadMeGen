@@ -4,8 +4,8 @@ const fs = require('fs');
 
 //Constants in the Files
 const tableOfContents = 
-"  \n  \n # Table of Contents  \n   \n[1. Description](#Description)  \n[2. Installation](#Installation)  \n[3. Usage](#Usage)  \n[4. License](#License)  \n[5. Contributing](#Contributing) \n[6. Tests](#Tests)  \n[7. Questions](#Questions) \n"
-const preFaces = ["  \n## Description  \n","  \n  \n## Installation  \n","  \n  \n## Usage  \n","  \n  \n## License  \n","  \n  \n## Contributions  \n","  \n  \n## Tests  \n","  \n  \n## Questions  \n" ]
+"  \n  \n # Table of Contents  \n   \n[1. Description](#Description)  \n[2. Installation](#Installation)  \n[3. Usage](#Usage)  \n[4. License](#License)  \n[5. Contributing](#Contributing)  \n[6. Tests](#Tests)  \n[7. Questions](#Questions) \n"
+const preFaces = ["  \n## Description  \n","  \n  \n## Installation  \n","  \n  \n## Usage  \n","  \n  \n## License  \n","  \n  \n## Contributions  \n","   \n   \n## Tests   \n","   \n   \n## Questions  \nTake a closer look at this repo and my other work by visiting my GitHub with the link below, or contact me directly by email.  \nGitHub: https://github.com/" ,"  \nEmail: "]
 const messages = ["description done.", "installation done.","usage done.","license done","contributions done.","tests done.","questions done."]
 let badge;
 
@@ -80,20 +80,15 @@ inquirer
             message: "What kind of tests can be done with this repo? ",
             name: "tests"
         },
-       /* {
-            type:"input",
-            message: "Any questions? ",
-            name: "questions"
-        },*/
        {
             type:"input",
             message: "GitHub username: ",
-            name: "questions[0]"
+            name: "github"
         },
         {
             type:"input",
             message: "E-mail: ",
-            name: "questions[1]"
+            name: "email"
         }
        
     ])
@@ -104,7 +99,7 @@ inquirer
 })
 //writing the ReadMe
 function fileWrite(response){
-    const names = [response.description, response.installation, response.usage, response.license,response.contributions, response.tests, response.questions]
+    const names = [response.description, response.installation, response.usage, response.license,response.contributions, response.tests, response.github,response.email]
     fs.writeFileSync('README.md', "# " +(response.fileTitle),(err) =>
     err ? console.error(err) : console.log('Title in'))
     makeBadge(response.license)//badge function to run with license selected from input
@@ -118,7 +113,7 @@ function fileWrite(response){
 //TO DO
     //download starter codex
     //add logox
-    //add comments
+    //add commentsx
     //add README
     //github link
     //linkes

@@ -6,12 +6,12 @@
 [2. Installation](#Installation)  
 [3. Usage](#Usage)  
 [4. License](#License)  
-[5. Contributing](#Contributing) 
+[5. Contributing](#Contributing)  
 [6. Tests](#Tests)  
 [7. Questions](#Questions) 
   
 ## Description  
-k  
+  
   
 ## Installation  
   
@@ -23,10 +23,12 @@ k
 GNU General Publice License v3.0  
   
 ## Contributions  
-  
-  
-## Tests  
-  
-  
+   
+   
+## Tests   
+   
+   
 ## Questions  
-,
+Take a closer look at this repo and my other work by visiting my GitHub with the link below, or contact me directly by email.  
+GitHub: https://github.com/  
+Email: 
