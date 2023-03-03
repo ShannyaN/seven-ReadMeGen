@@ -40,3 +40,4 @@ Email: niveyro101@gmail.com
 ## Links  
 Deployed site: N/A  
 Repository: https://github.com/ShannyaN/seven-ReadMeGen
+Video Demo: https://drive.google.com/file/d/1Y3AN54q2QwoWDIn_AvKCwVy01c6g9bdk/view
