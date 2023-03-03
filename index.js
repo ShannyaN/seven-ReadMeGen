@@ -109,12 +109,3 @@ function fileWrite(response){
         fs.appendFileSync('README.md',preFaces[i] + names[i], (err)=>err ? console.error(err): console.log(messages[i]))
         }
     } 
-
-//TO DO
-    //download starter codex
-    //add logox
-    //add commentsx
-    //add README
-    //github link
-    //linkes
-    //questions-how to rach me
